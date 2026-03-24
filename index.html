@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papelería Ortiz</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    .font-fredoka { font-family: 'Fredoka', sans-serif; }
+    .font-nunito { font-family: 'Nunito', sans-serif; }
+    
+    @keyframes float 
+    {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(3deg); }
+    }
+    
+    .float-animation { animation: float 3s ease-in-out infinite; }
+    
+    .product-card 
+    {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .product-card:hover 
+    {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .pencil-border 
+    {
+      background: repeating-linear-gradient(
+        90deg,
+        #eab308 0px,
+        #eab308 10px,
+        #d97706 10px,
+        #d97706 20px
+      );
+      height: 8px;
+    }
+    
+    .scroll-smooth { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="h-full overflow-auto scroll-smooth">
+  <div id="app-wrapper" class="w-full min-h-full" style="background: linear-gradient(135deg, #fef3c7 0%, #fff7ed 50%, #fef9c3 100%);">
+    
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 shadow-lg">
+      <div class="pencil-border"></div>
+      <div class="max-w-7xl mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <img src="logo.jpeg" alt="" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-full shadow-md border-2 border-white">
+            <div>
+              <h1 class="text-2xl md:text-3xl font-fredoka font-bold text-gray-900">Papelería Ortiz</h1>
+              <p class="text-xs md:text-sm text-amber-700 font-nunito font-bold">✨ Todo para crear, aprender y brillar</p>
+            </div>
+          </div>
+          <nav class="hidden md:flex items-center gap-8 font-nunito font-bold text-gray-700">
+            <a href="#inicio" class="hover:text-amber-600 transition-colors">Inicio</a>
+            <a href="#video-seccion" class="hover:text-amber-600 transition-colors">Conócenos</a>
+            <a href="#productos" class="hover:text-amber-600 transition-colors">Catálogo</a>
+            <a href="#contacto" class="hover:text-amber-600 transition-colors">Ubicación y Contacto</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="inicio" class="py-16 md:py-20 max-w-7xl mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="flex-1 text-center lg:text-left">
+          <h2 class="text-4xl md:text-6xl font-fredoka font-bold text-gray-800 mb-6">Equípate con lo mejor para la escuela y oficina 🎒</h2>
+          <p class="text-lg text-gray-600 font-nunito mb-8">Contamos con un extenso surtido, la mejor calidad y precios increíbles en Tlaxcoapan.</p>
+          <div class="flex gap-4 justify-center lg:justify-start">
+            <a href="#productos" class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:scale-105 transition-transform">Ver Catálogo</a>
+            <a href="#contacto" class="bg-white text-gray-800 border-2 border-gray-200 px-8 py-4 rounded-2xl font-bold shadow-lg hover:bg-gray-50">📍 Visítanos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="video-seccion" class="py-12 max-w-5xl mx-auto px-4">
+      <div class="bg-white rounded-3xl p-6 md:p-10 shadow-xl border-4 border-amber-200 text-center">
+        <h3 class="text-3xl font-fredoka font-bold text-gray-800 mb-6">¡Conoce nuestra tienda! 🎥</h3>
+        
+        <video class="w-full max-w-3xl mx-auto rounded-2xl shadow-md border-2 border-gray-100 bg-black" controls>
+          <source src="video-promocional.mp4" type="video/mp4">
+          Tu navegador no soporta el reproductor de video.
+        </video>
+        
+        <p class="font-nunito text-gray-600 mt-4 text-lg">Visítanos en Doxey y descubre todo lo que Papelería Ortiz tiene para ti.</p>
+      </div>
+    </section>
+
+    <section id="productos" class="py-16 bg-white/40">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <h3 class="text-3xl md:text-4xl font-fredoka font-bold text-gray-800 mb-4">Nuestro Catálogo</h3>
+          <p class="text-gray-600 font-nunito">Explora todos nuestros artículos escolares y de papelería</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-2 mb-10">
+          <button class="filter-btn active bg-amber-500 text-white px-5 py-2 rounded-full font-nunito font-bold shadow-sm" data-filter="all">Todos</button>
+          <button class="filter-btn bg-white text-gray-700 px-5 py-2 rounded-full font-nunito font-bold shadow-sm border border-gray-200" data-filter="escritura">✏️ Escritura</button>
+          <button class="filter-btn bg-white text-gray-700 px-5 py-2 rounded-full font-nunito font-bold shadow-sm border border-gray-200" data-filter="cuadernos">📓 Cuadernos y Papel</button>
+          <button class="filter-btn bg-white text-gray-700 px-5 py-2 rounded-full font-nunito font-bold shadow-sm border border-gray-200" data-filter="arte">🎨 Arte</button>
+          <button class="filter-btn bg-white text-gray-700 px-5 py-2 rounded-full font-nunito font-bold shadow-sm border border-gray-200" data-filter="manualidades">✨ Manualidades</button>
+          <button class="filter-btn bg-white text-gray-700 px-5 py-2 rounded-full font-nunito font-bold shadow-sm border border-gray-200" data-filter="oficina">📎 Oficina</button>
+        </div>
+
+        <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          </div>
+
+        <div class="text-center mt-12">
+          <button id="load-more-btn" class="bg-white border-2 border-amber-300 text-amber-800 px-8 py-4 rounded-2xl font-bold shadow-md hover:bg-amber-50 transition-colors">
+            Cargar más productos ⬇️
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-16 max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h3 class="text-3xl md:text-4xl font-fredoka font-bold text-gray-800 mb-4">Ubicación y Contacto</h3>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-3xl shadow-xl flex flex-col justify-between">
+          <div>
+            <h4 class="font-fredoka font-bold text-2xl mb-6 text-gray-800">Datos de Contacto</h4>
+            <div class="space-y-4 font-nunito text-lg text-gray-700">
+              <p class="flex items-start gap-3">
+                <span class="text-2xl">📍</span> 
+                <span><strong>Dirección:</strong><br> Calle Nicolas Bravo, Doxey<br> Tlaxcoapan, México, C.P. 42960</span>
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-2xl">📱</span> 
+                <span><strong>WhatsApp:</strong> +52 771 292 3491</span>
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-2xl">⏰</span> 
+                <span><strong>Horario:</strong> 9:00 AM - 6:00 PM</span>
+              </p>
+            </div>
+          </div>
+          
+          <div class="mt-8 border-t pt-6">
+            <h5 class="font-nunito font-bold text-gray-600 mb-4">Síguenos en nuestras redes oficiales:</h5>
+            <div class="flex gap-4">
+              <a href="https://www.facebook.com/profile.php?id=61587712432208" target="_blank" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors shadow-md">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/papeleria.ortiz" target="_blank" class="w-12 h-12 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity shadow-md">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@papeleria.ortiz0" target="_blank" class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-md">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z"/></svg>
+              </a>
+            </div>
+            
+            <div class="mt-6 flex items-center gap-4">
+              <img src="qr.jpeg" alt="" class="w-24 h-24 object-cover border-2 border-gray-200 rounded-lg p-1 bg-white">
+              <p class="font-nunito text-sm text-gray-500">Escanea nuestro código QR<br>para guardarnos rápidamente.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-200 rounded-3xl shadow-xl overflow-hidden min-h-[400px] border-4 border-white relative">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nicolas%20Bravo,%20Doxey,%20Tlaxcoapan,%20Mexico&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            class="absolute top-0 left-0 w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 text-center font-nunito border-t-4 border-amber-500">
+      <p>© 2026 Papelería Ortiz. Doxey, Tlaxcoapan.</p>
+    </footer>
+  </div>
+
+  <script>
+    // DATOS DE LOS PRODUCTOS CON PRECIOS REALES
+    const products = [
+      { id: 1, name: "Lápices", emoji: "✏️", category: "escritura", price: "$6", color: "amber" },
+      { id: 2, name: "Plumas", emoji: "🖊️", category: "escritura", price: "$7, $8, $12", color: "blue" },
+      { id: 3, name: "Bolígrafos", emoji: "🖊️", category: "escritura", price: "$16", color: "blue" },
+      { id: 4, name: "Marcadores permanentes", emoji: "🖍️", category: "escritura", price: "$12, $20, $34", color: "red" },
+      { id: 5, name: "Marcadores para pizarrón", emoji: "📝", category: "escritura", price: "$22", color: "green" },
+      { id: 6, name: "Corrector (Líquido/Cinta)", emoji: "✨", category: "escritura", price: "$16.50, $22.50", color: "gray" },
+      { id: 7, name: "Sacapuntas", emoji: "✏️🗑️", category: "escritura", price: "$3, $4", color: "orange" },
+      { id: 8, name: "Gomas de borrar", emoji: "⬜", category: "escritura", price: "$3.50, $6, $8, $12.50", color: "pink" },
+      { id: 9, name: "Cuadernos profesionales", emoji: "📓", category: "cuadernos", price: "$30", color: "blue" },
+      { id: 10, name: "Libretas", emoji: "📔", category: "cuadernos", price: "$42, $52, $68", color: "purple" },
+      { id: 11, name: "Blocks de notas", emoji: "📋", category: "cuadernos", price: "$18", color: "yellow" },
+      { id: 12, name: "Papel bond (Carta/Oficio)", emoji: "📄", category: "cuadernos", price: "$5", color: "gray" },
+      { id: 13, name: "Papeles de colores", emoji: "🌈", category: "cuadernos", price: "$1", color: "pink" },
+      { id: 14, name: "Papel fotográfico", emoji: "📸", category: "cuadernos", price: "$15", color: "blue" },
+      { id: 15, name: "Hojas p/ impresora", emoji: "🖨️", category: "cuadernos", price: "$0.30", color: "gray" },
+      { id: 16, name: "Cartulina", emoji: "📃", category: "cuadernos", price: "$5", color: "amber" },
+      { id: 17, name: "Papel cascarón", emoji: "📃️", category: "cuadernos", price: "$8, $10, $22", color: "gray" },
+      { id: 18, name: "Papel china y crepé", emoji: "🎊", category: "manualidades", price: "$3, $9", color: "pink" },
+      { id: 19, name: "Colores de madera", emoji: "🖍️", category: "arte", price: "$24, $42, $56, $115", color: "amber" },
+      { id: 20, name: "Crayones", emoji: "🖍️", category: "arte", price: "$36", color: "red" },
+      { id: 21, name: "Plumones", emoji: "🎨", category: "arte", price: "$18, $37", color: "purple" },
+      { id: 22, name: "Tijeras escolares", emoji: "✂️", category: "arte", price: "$15, $22", color: "blue" },
+      { id: 23, name: "Pegamento (Blanco/Barra)", emoji: "🧴", category: "arte", price: "$4, $5, $8, $14, $24", color: "orange" },
+      { id: 24, name: "Juego de geometría", emoji: "📐", category: "arte", price: "$54", color: "green" },
+      { id: 25, name: "Reglas y transportadores", emoji: "📏", category: "arte", price: "$8, $12", color: "blue" },
+      { id: 26, name: "Escuadras", emoji: "📐", category: "arte", price: "$12", color: "blue" },
+      { id: 27, name: "Compases", emoji: "⭕", category: "arte", price: "$32", color: "purple" },
+      { id: 28, name: "Plastilina", emoji: "🎭", category: "arte", price: "$14, $22.50", color: "green" },
+      { id: 29, name: "Pinturas y acuarelas", emoji: "🎨", category: "arte", price: "$14, $29", color: "pink" },
+      { id: 30, name: "Pinceles", emoji: "🖌️", category: "arte", price: "$3, $5, $8, $10, $15", color: "amber" },
+      { id: 31, name: "Carpetas y folders", emoji: "📁", category: "oficina", price: "$8", color: "blue" },
+      { id: 32, name: "Separadores", emoji: "📑", category: "oficina", price: "$22", color: "green" },
+      { id: 33, name: "Sobres", emoji: "✉️", category: "oficina", price: "$3", color: "gray" },
+      { id: 34, name: "Notas adhesivas", emoji: "📌", category: "oficina", price: "$12, $17", color: "yellow" },
+      { id: 35, name: "Clips (3 por $1)", emoji: "📎", category: "oficina", price: "$1", color: "purple" },
+      { id: 36, name: "Engrapadora y grapas", emoji: "📍", category: "oficina", price: "$29", color: "red" },
+      { id: 37, name: "Perforadoras", emoji: "🕳️", category: "oficina", price: "$34", color: "blue" },
+      { id: 38, name: "Cinta y Masking Tape", emoji: "🎀", category: "oficina", price: "$29, $34, $52", color: "amber" },
+      { id: 39, name: "Foamy", emoji: "🧩", category: "manualidades", price: "$4", color: "pink" },
+      { id: 40, name: "Silicón (Líquido/Barra)", emoji: "💧", category: "manualidades", price: "$12, $16, $24", color: "gray" },
+      { id: 41, name: "Pistolas de silicón", emoji: "🔫", category: "manualidades", price: "$65", color: "orange" },
+      { id: 42, name: "Listones", emoji: "🎀", category: "manualidades", price: "$4, $5, $8", color: "purple" },
+      { id: 43, name: "Diamantina y lentejuelas", emoji: "✨", category: "manualidades", price: "$4", color: "amber" },
+      { id: 44, name: "Calculadora básica", emoji: "🔢", category: "oficina", price: "$76", color: "blue" },
+      { id: 45, name: "Calculadora científica", emoji: "🧮", category: "oficina", price: "$125", color: "gray" }
+    ];
+
+    const colorClasses = 
+    {
+      amber: "bg-amber-100 text-amber-600",
+      blue: "bg-blue-100 text-blue-600",
+      green: "bg-green-100 text-green-600",
+      pink: "bg-pink-100 text-pink-600",
+      purple: "bg-purple-100 text-purple-600",
+      red: "bg-red-100 text-red-600",
+      orange: "bg-orange-100 text-orange-600",
+      yellow: "bg-yellow-100 text-yellow-600",
+      gray: "bg-gray-100 text-gray-600"
+    };
+
+    let currentFilter = 'all';
+    let visibleCount = 12;
+
+    function createProductCard(product) 
+    {
+      return `
+        <div class="product-card bg-white rounded-2xl p-4 shadow-md border border-gray-100 flex flex-col h-full">
+          <div class="w-full h-32 rounded-xl flex items-center justify-center mb-4 shadow-inner ${colorClasses[product.color]}">
+            <span class="text-6xl drop-shadow-sm">${product.emoji}</span>
+          </div>
+          <div class="flex-grow flex flex-col justify-between">
+            <h4 class="font-fredoka font-bold text-gray-800 text-center text-sm md:text-base leading-tight mb-2">${product.name}</h4>
+            <p class="font-nunito font-extrabold text-center text-lg text-amber-600 bg-amber-50 rounded-lg py-1">${product.price}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProducts() 
+    {
+      const grid = document.getElementById('products-grid');
+      const filtered = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
+      const toShow = filtered.slice(0, visibleCount);
+      grid.innerHTML = toShow.map(createProductCard).join('');
+      document.getElementById('load-more-btn').style.display = visibleCount >= filtered.length ? 'none' : 'inline-block';
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => 
+    {
+      btn.addEventListener('click', () => 
+      {
+        document.querySelectorAll('.filter-btn').forEach(b => 
+        {
+          b.classList.remove('bg-amber-500', 'text-white');
+          b.classList.add('bg-white', 'text-gray-700');
+        });
+        btn.classList.remove('bg-white', 'text-gray-700');
+        btn.classList.add('bg-amber-500', 'text-white');
+        currentFilter = btn.dataset.filter;
+        visibleCount = 12;
+        renderProducts();
+      });
+    });
+
+    document.getElementById('load-more-btn').addEventListener('click', () => 
+    {
+      visibleCount += 8;
+      renderProducts();
+    });
+
+    renderProducts();
+  </script>
+</body>
+</html>
